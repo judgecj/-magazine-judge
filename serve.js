@@ -11,7 +11,7 @@ var DIR = './uploads/';
 var upload = multer({dest: DIR}).single('photo');
 
 var app = express();
-var port = 3000;
+var port = process.env.port || 3000
 cloudinary.config({
     cloud_name: 'easywaya',
     api_key: '941675619944356',
