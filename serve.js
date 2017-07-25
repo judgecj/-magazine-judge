@@ -61,7 +61,7 @@ app.post('/upload', function (req, res, next) {
 
 
 });*/
-app.use(express.static(path.join(__dirname,'client/dist')));
+app.use(express.static(path.join(__dirname,'app/client/dist')));
 app.use(body.urlencoded({extended:true}));
 app.use(body.json());
 app.use(function(req, res, next) {
@@ -73,7 +73,7 @@ app.use(function(req, res, next) {
 
 app.use('/api', tasts);
 app.use('*', function (req, res)  {
-    res.sendFile(path.join(__dirname, 'client/dist/index.html'));
+    res.sendFile(path.join(__dirname, 'app/client/dist/index.html'));
 
 })
 app.listen(port, function() {
